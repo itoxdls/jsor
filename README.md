@@ -12,16 +12,16 @@ $ npm install js-easy-to-html
 var Html = require('js-easy-to-html');
  
 console.log(
-    var Html({tag: 'div', className: 'my-class', id:47, childNodes: [
+    var Html({tag: 'div', id=1, className: 'my-class', childNodes: [
       {tag: 'p', innerHTML:'First element'},
       {tag: 'p', innerHTML:'Second element'}
     ]});
 )
 
 /* logs:
-<div class=the_class id=47>
-  <p>First paragraph</p>
-  <p>Second paragraph</p>
+<div class=the_class id=1>
+  <p>First element</p>
+  <p>Second element</p>
 </div>
 */
 ```
@@ -31,9 +31,17 @@ console.log(
 ```javascript
 var Html = require('js-easy-to-html');
 
-var data = {tag: 'div', className: 'my-class', id:47, childNodes: [{tag: 'p', innerHTML:'First element'},{tag: 'p', innerHTML:'Second element'}]};
+//data from the backend
+var data = {tag: 'div', className: 'my-class', id:1, childNodes: [{tag: 'p', innerHTML:'First element'},{tag: 'p', innerHTML:'Second element'}]};
 
 console.log(Html(data));
+
+/* logs:
+<div class=the_class id=1>
+  <p>First element</p>
+  <p>Second element</p>
+</div>
+*/
 ```
 
 # Example each data
@@ -41,7 +49,7 @@ console.log(Html(data));
 ```javascript
 var Html = require('js-easy-to-html');
 
-var data = [{name: 'First paragraph'}, {name: 'Second paragraph'}]
+var data = [{name: 'First element'}, {name: 'Second element'}]
  
 console.log(
     var Html({tag: 'div', className: 'container', childNodes: data.map(function (e) {
@@ -50,9 +58,9 @@ console.log(
 )
 
 /* logs:
-<div class=the_class id=47>
-  <p>First paragraph</p>
-  <p>Second paragraph</p>
+<div class=the_class id=1>
+  <p>First element</p>
+  <p>Second element</p>
 </div>
 */
 ```

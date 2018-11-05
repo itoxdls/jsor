@@ -1,6 +1,6 @@
 {
   "name": "js-easy-to-html",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Extensión js, preprocesador javascript para convertir objetos js a elementos html, es una sintaxis mucho más limpia y podemos generarla desde el backend",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,6 @@
     "javascript",
     "sintaxis",
     "html",
-    "en",
     "javascript",
     "js",
     "to",
