@@ -15,8 +15,8 @@ console.log(
     Html({tag: 'div', id=1, className: 'my-class', childNodes: [
       {tag: 'p', innerHTML:'First element'},
       {tag: 'p', innerHTML:'Second element'}
-    ]});
-)
+    ]})
+);
 
 /* logs:
 <div class=the_class id=1>
@@ -56,8 +56,8 @@ var data = [{name: 'First element'}, {name: 'Second element'}]
 console.log(
     Html({tag: 'div', className: 'container', childNodes: data.map(function (e) {
                 return {tag:'p', innerHTML:e.name};
-    })});
-)
+    })})
+);
 
 /* logs:
 <div class=the_class id=1>
