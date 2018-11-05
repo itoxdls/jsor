@@ -4,7 +4,7 @@
   "description": "Extensión js, preprocesador javascript para convertir objetos js a elementos html, es una sintaxis mucho más limpia y podemos generarla desde el backend",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [
     "preprocesador",
@@ -18,5 +18,9 @@
     "html"
   ],
   "author": "Carlos De Los Santos",
-  "license": "MIT"
+  "git": "https://github.com/itoxdls/jshtml.git",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
 }
