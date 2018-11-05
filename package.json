@@ -18,6 +18,7 @@
     "html"
   ],
   "author": "Carlos De Los Santos",
+  "git": "https://github.com/itoxdls/jshtml.git",
   "license": "MIT",
   "devDependencies": {
     "mocha": "^5.2.0"
