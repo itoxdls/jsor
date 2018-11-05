@@ -12,7 +12,7 @@ $ npm install js-easy-to-html
 var Html = require('js-easy-to-html');
  
 console.log(
-    var Html({tag: 'div', id=1, className: 'my-class', childNodes: [
+    Html({tag: 'div', id=1, className: 'my-class', childNodes: [
       {tag: 'p', innerHTML:'First element'},
       {tag: 'p', innerHTML:'Second element'}
     ]});
@@ -34,7 +34,9 @@ var Html = require('js-easy-to-html');
 //data from the backend
 var data = {tag: 'div', className: 'my-class', id:1, childNodes: [{tag: 'p', innerHTML:'First element'},{tag: 'p', innerHTML:'Second element'}]};
 
-console.log(Html(data));
+console.log(
+    Html(data)
+);
 
 /* logs:
 <div class=the_class id=1>
@@ -52,9 +54,9 @@ var Html = require('js-easy-to-html');
 var data = [{name: 'First element'}, {name: 'Second element'}]
  
 console.log(
-    var Html({tag: 'div', className: 'container', childNodes: data.map(function (e) {
+    Html({tag: 'div', className: 'container', childNodes: data.map(function (e) {
                 return {tag:'p', innerHTML:e.name};
-            })});
+    })});
 )
 
 /* logs:
