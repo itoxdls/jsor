@@ -1,6 +1,6 @@
 {
   "name": "js-easy-to-html",
-  "version": "1.0.12",
+  "version": "1.0.15",
   "description": "Js extension, javascript preprocessor to convert js objects to html elements, is a much cleaner syntax and we can generate it from the backend",
   "main": "lib/js-easy-to-html.js",
   "scripts": {
