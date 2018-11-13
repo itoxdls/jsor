@@ -1,6 +1,6 @@
 {
   "name": "js-easy-to-html",
-  "version": "1.0.15",
+  "version": "1.0.19",
   "description": "Js extension, javascript preprocessor to convert js objects to html elements, is a much cleaner syntax and we can generate it from the backend",
   "main": "lib/js-easy-to-html.js",
   "scripts": {
@@ -17,11 +17,17 @@
     "to",
     "html"
   ],
-  "author": "Carlos De Los Santos",
-  "git": "https://github.com/itoxdls/jshtml.git",
+  "author": "Carlos De Los Santos <itoxdls@gmail.com>",
   "license": "MIT",
+  "repository": "itoxdls/jshtml",
   "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "babel-loader": "^8.0.4",
     "jsdom": "^13.0.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "script-loader": "^0.7.2",
+    "webpack": "^4.25.1",
+    "webpack-command": "^0.4.1"
   }
 }

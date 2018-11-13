@@ -1,7 +1,14 @@
 # js-easy-to-html
-Js extension, javascript preprocessor to convert js objects to html elements, is a much cleaner syntax and we can generate it from the backend
+Create HTML text from JS object, javascript preprocessor to convert js objects to html elements, is a much cleaner syntax and we can generate it from the backend
 
-# Install
+# Browser
+Script tag
+```javascript
+<script src="https://unpkg.com/js-easy-to-html@1.0.18/dist/js-easy-to-html.min.js"></script>
+```
+
+# Node
+To include jsEasyToHtml in Node, first install with npm.
 ```javascript
 $ npm install js-easy-to-html
 ```
@@ -86,6 +93,47 @@ console.log(
 <div id="1" class="my-class">
   <p style="display: none;">Second element</p>
   <p class="hidde">Third element</p>
+</div>
+*/
+```
+
+# Separate by components
+
+```javascript
+var ChildA = (props) => {
+  return {tag: 'div', onClick: props.handleChange, childNodes: [
+      {tag: 'h1', innerHTML: 'Score: 1'}
+  ]};
+};
+
+var ChildB = (props) => {
+  return {tag: 'div', onClick: props.handleChange, childNodes: [
+      {tag: 'h1', innerHTML: 'Score: 2'}
+  ]};
+};
+
+var Parent = () => {
+  handleChange = function (event) {
+      console.log(event.target.innerHTML);
+  };
+  return {tag: 'div', id: 'parent', childNodes: [
+      {tag: ChildA, handleChange: this.handleChange},
+      {tag: ChildB, handleChange: this.handleChange}
+  ]};
+};
+
+console.log(
+  Html({tag: Parent})
+);
+
+/* logs:
+<div id="parent">
+  <div>
+    <h1>Score: 1</h1>
+  </div>
+  <div>
+    <h1>Score: 2</h1>
+  </div>
 </div>
 */
 ```
