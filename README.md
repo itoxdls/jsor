@@ -1,10 +1,15 @@
 # js-easy-to-html
-Create HTML text from JS object, javascript preprocessor to convert js objects to html elements, is a much cleaner syntax and we can generate it from the backend
+
+> jsEasyToHtml is a fast and very small JavaScript library with only 2.0 KB.
+
+It helps convert javascript objects into HTML documents, this makes the code cleaner, clearer and more readable, the programming is simpler, easier and more reusable, it is compatible with most browsers since it uses native javascript.
+
+If you are new to jsEasyToHtml, we recommend that you take a look at the information below.
 
 # Browser
 Script tag
 ```javascript
-<script src="https://unpkg.com/js-easy-to-html@1.0.18/dist/js-easy-to-html.min.js"></script>
+<script src="https://unpkg.com/js-easy-to-html@1.0.22/dist/js-easy-to-html.min.js"></script>
 ```
 
 # Node
