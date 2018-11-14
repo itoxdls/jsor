@@ -3,13 +3,13 @@ const path = require('path');
 
 module.exports = {
     entry: [
-        './lib/js-easy-to-html.js'
+        './lib/jsor.js'
     ],
     mode: 'production',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js-easy-to-html.min.js',
-        library: 'jsEasyToHtml',
+        filename: 'jsor.min.js',
+        library: 'jsor',
         libraryTarget: 'umd'
     },
     module: {

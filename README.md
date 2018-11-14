@@ -1,27 +1,27 @@
-# js-easy-to-html
+# jsor
 
-> jsEasyToHtml is a fast and very small JavaScript library with only 2.0 KB.
+> jsor is a fast and very small JavaScript library with only 2.0 KB.
 
 It helps convert javascript objects into HTML documents, this makes the code cleaner, clearer and more readable, the programming is simpler, easier and more reusable, it is compatible with most browsers since it uses native javascript.
 
-If you are new to jsEasyToHtml, we recommend that you take a look at the information below.
+If you are new to jsor, we recommend that you take a look at the information below.
 
 # Browser
 Script tag
 ```javascript
-<script src="https://unpkg.com/js-easy-to-html@1.0.22/dist/js-easy-to-html.min.js"></script>
+<script src="https://unpkg.com/jsor@1.0.1/dist/jsor.min.js"></script>
 ```
 
 # Node
-To include jsEasyToHtml in Node, first install with npm.
+To include jsor in Node, first install with npm.
 ```javascript
-$ npm install js-easy-to-html
+$ npm install jsor
 ```
 
 # Example
 
 ```javascript
-import Html from 'js-easy-to-html';
+import Html from 'jsor';
  
 console.log(
     Html({tag: 'div', id:1, className: 'my-class', childNodes: [
@@ -41,7 +41,7 @@ console.log(
 # Example backend data
 
 ```javascript
-import Html from 'js-easy-to-html';
+import Html from 'jsor';
 
 //data from the backend
 var data = '{"tag":"div","className":"my-class","id":"1","childNodes":[{"tag":"p","innerHTML":"First element"},{"tag":"p","innerHTML":"Second element"}]}';
@@ -61,7 +61,7 @@ console.log(
 # Example each data
 
 ```javascript
-import Html from 'js-easy-to-html';
+import Html from 'jsor';
 
 var data = [{name: 'First element'}, {name: 'Second element'}]
  
@@ -82,7 +82,7 @@ console.log(
 # Simple example, hidden element
 
 ```javascript
-import Html from 'js-easy-to-html';
+import Html from 'jsor';
 
 let enabled = false;
 

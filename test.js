@@ -1,7 +1,7 @@
 // assert es la libreria que nos permite verificar cosas
 const assert = require('assert')
 // instanciamos el codifo de nuestra libreria
-const Html = require('./lib/js-easy-to-html')
+const jsor = require('./lib/jsor')
 
 if(typeof document === 'undefined'){
   const jsdom = require("jsdom");
@@ -12,10 +12,10 @@ if(typeof document === 'undefined'){
 }
 
 // describe es la forma en la que describimos que pasrá
-describe('js-easy-to-html', function() {
+describe('jsor', function() {
   it('should return a string representing a greeting', function() {
     assert.equal(
-      Html({tag: 'div', className: 'btn', id:1, style:{color:'#999'}, setAttribute:{color:'negro'}, childNodes: [
+      jsor.render({tag: 'div', className: 'btn', id:1, style:{color:'#999'}, setAttribute:{color:'negro'}, childNodes: [
         {tag: 'p', innerHTML:'First element'},
         {tag: 'p', innerHTML:'Second element'}
       ]}).outerHTML,

@@ -1,8 +1,8 @@
 {
-  "name": "js-easy-to-html",
-  "version": "1.0.22",
-  "description": "Js extension, javascript preprocessor to convert js objects to html elements, is a much cleaner syntax and we can generate it from the backend",
-  "main": "lib/js-easy-to-html.js",
+  "name": "jsor",
+  "version": "1.0.1",
+  "description": "jsor is a fast and very small JavaScript library with only 2.0 KB",
+  "main": "lib/jsor.js",
   "scripts": {
     "test": "mocha",
     "build": "webpack --config ./webpack.config.js"
@@ -14,7 +14,7 @@
     "html",
     "javascript",
     "js",
-    "to",
+    "json",
     "html"
   ],
   "author": "Carlos De Los Santos <itoxdls@gmail.com>",
