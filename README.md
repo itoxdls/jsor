@@ -9,7 +9,7 @@ If you are new to jsor, we recommend that you take a look at the information bel
 # Browser
 Script tag
 ```javascript
-<script src="https://unpkg.com/jsor@1.0.1/dist/jsor.min.js"></script>
+<script src="https://unpkg.com/jsor@1.0.2/dist/jsor.min.js"></script>
 ```
 
 # Node
@@ -21,7 +21,7 @@ $ npm install jsor
 # Example
 
 ```javascript
-import Html from 'jsor';
+import JSOR from 'jsor';
  
 console.log(
     Html({tag: 'div', id:1, className: 'my-class', childNodes: [
@@ -41,13 +41,13 @@ console.log(
 # Example backend data
 
 ```javascript
-import Html from 'jsor';
+import JSOR from 'jsor';
 
 //data from the backend
 var data = '{"tag":"div","className":"my-class","id":"1","childNodes":[{"tag":"p","innerHTML":"First element"},{"tag":"p","innerHTML":"Second element"}]}';
 
 console.log(
-    Html(JSON.parse(data))
+    JSOR.render(JSON.parse(data))
 );
 
 /* logs:
@@ -61,12 +61,12 @@ console.log(
 # Example each data
 
 ```javascript
-import Html from 'jsor';
+import JSOR from 'jsor';
 
 var data = [{name: 'First element'}, {name: 'Second element'}]
  
 console.log(
-    Html({tag: 'div', className: 'container', childNodes: data.map(function (e) {
+    JSOR.render({tag: 'div', className: 'container', childNodes: data.map(function (e) {
       return {tag:'p', innerHTML:e.name};
     })})
 );
@@ -82,12 +82,12 @@ console.log(
 # Simple example, hidden element
 
 ```javascript
-import Html from 'jsor';
+import JSOR from 'jsor';
 
 let enabled = false;
 
 console.log(
-    Html({tag: 'div', id:1, className: 'my-class', childNodes: [
+    JSOR.render({tag: 'div', id:1, className: 'my-class', childNodes: [
       !enabled || {tag: 'p', innerHTML:'First element'},
       {tag: 'p', innerHTML:'Second element', style:{display:enabled || 'none'}},
       {tag: 'p', innerHTML:'Third element', className:enabled || 'hidde'}
@@ -105,40 +105,47 @@ console.log(
 # Separate by components
 
 ```javascript
-var ChildA = (props) => {
+const FirstElement = (props) => {
   return {tag: 'div', onClick: props.handleChange, childNodes: [
-      {tag: 'h1', innerHTML: 'Score: 1'}
+    {tag: 'h1', innerHTML: 'First element'}
   ]};
 };
 
-var ChildB = (props) => {
+const SecondElement = (props) => {
   return {tag: 'div', onClick: props.handleChange, childNodes: [
-      {tag: 'h1', innerHTML: 'Score: 2'}
+    {tag: 'h1', innerHTML: 'Second element'}
   ]};
 };
 
-var Parent = () => {
-  handleChange = function (event) {
-      console.log(event.target.innerHTML);
-  };
-  return {tag: 'div', id: 'parent', childNodes: [
-      {tag: ChildA, handleChange: this.handleChange},
-      {tag: ChildB, handleChange: this.handleChange}
-  ]};
-};
+class Parent {
+  constructor(props) {
+    this.props = props;
+  }
+  handleChange(event) {
+    console.log(event.target.innerHTML);
+  }
+  render() {
+    return {tag: 'div', className: 'btn', style: {color: '#999'}, id: 'parent', childNodes: [
+      {tag: FirstElement, handleChange: this.handleChange},
+      {tag: SecondElement, handleChange: this.handleChange},
+      this.props.childNodes
+    ]};
+  }
+}
 
 console.log(
-  Html({tag: Parent})
+  JSOR.render({tag: Parent, hide: true, childNodes: [
+    {tag: 'div', childNodes: [
+      {tag: 'h1', innerHTML: 'Third element'}
+    ]}
+  ]})
 );
 
 /* logs:
-<div id="parent">
-  <div>
-    <h1>Score: 1</h1>
-  </div>
-  <div>
-    <h1>Score: 2</h1>
-  </div>
+<div class="btn" id="parent" style="color: rgb(153, 153, 153);">
+  <div><h1>First element</h1></div>
+  <div><h1>Second element</h1></div>
+  <div><div><h1>Third element</h1></div></div>
 </div>
 */
 ```
