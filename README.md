@@ -9,7 +9,7 @@ If you are new to jsor, we recommend that you take a look at the information bel
 # Browser
 Script tag
 ```javascript
-<script src="https://unpkg.com/jsor@1.0.2/dist/jsor.min.js"></script>
+<script src="https://unpkg.com/jsor@1.0.4/dist/jsor.min.js"></script>
 ```
 
 # Node
@@ -24,7 +24,7 @@ $ npm install jsor
 import JSOR from 'jsor';
  
 console.log(
-    Html({tag: 'div', id:1, className: 'my-class', childNodes: [
+    JSOR.render({tag: 'div', id:1, className: 'my-class', childNodes: [
       {tag: 'p', innerHTML:'First element'},
       {tag: 'p', innerHTML:'Second element'}
     ]})

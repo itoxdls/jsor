@@ -1,6 +1,6 @@
 {
   "name": "jsor",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "jsor is a fast and very small JavaScript library with only 2.0 KB",
   "main": "lib/jsor.js",
   "scripts": {

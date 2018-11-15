@@ -9,7 +9,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'jsor.min.js',
-        library: 'jsor',
+        library: 'JSOR',
         libraryTarget: 'umd'
     },
     module: {
