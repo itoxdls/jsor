@@ -149,3 +149,39 @@ console.log(
 </div>
 */
 ```
+
+# Extend Components
+
+```javascript
+class Parent extends JSOR.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        running:true
+    };
+    this.handleChangeStop = this.handleChangeStop.bind(this);
+  }
+  handleChangeStop() {
+    this.setState({
+        running:false
+    })
+  }
+  render() {
+    return {tag: 'div', childNodes: [
+      {tag: 'span', handleChangeStop: this.handleChangeStop, innerHTML:'[Stop]'},
+      {tag: 'div', innerHTML: this.state.running ? 'Loading...' : ''}
+    ]};
+  }
+}
+
+console.log(
+  JSOR.render({tag: Parent})
+);
+
+/* logs:
+<div>
+  <span>[Stop]</div>
+  <div>Loading...</div>
+</div>
+*/
+```
